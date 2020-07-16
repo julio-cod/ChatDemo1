@@ -16,12 +16,12 @@ namespace ChatDemo1.Views
 
         public static int IdReceptor = 0;
         
-        public ChatPageNew(string IdUsuario, string NombreUsuario, string ApellidoUsuario, string Correo, string NumCell, string FotoUsuario)
+        public ChatPageNew(string IdUsuarioReceptor, string NombreUsuario, string ApellidoUsuario, string Correo, string NumCell, string FotoUsuario)
         {
             InitializeComponent();
             
             Title = Title + " "+ NombreUsuario +" "+ ApellidoUsuario;
-            IdReceptor = int.Parse( IdUsuario);
+            IdReceptor = int.Parse(IdUsuarioReceptor);
             BindingContext = new ChatPageNewViewModel();
 
         }

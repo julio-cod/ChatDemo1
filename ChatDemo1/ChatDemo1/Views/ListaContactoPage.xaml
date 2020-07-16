@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChatDemo1.Views.ListaContactoPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="Chat" />
+
+        <Frame
+            Grid.Row="1"
+            Padding="0,0,0,-1"
+            BackgroundColor="#F1F1F1"
+            CornerRadius="20"
+            HasShadow="False"
+            HorizontalOptions="FillAndExpand"
+            IsClippedToBounds="True">
+
+            <SearchBar HorizontalOptions="FillAndExpand" Placeholder="Buscar" />
+
+        </Frame>
+
+        <BoxView
+            Grid.Row="2"
+            BackgroundColor="#DDD"
+            HeightRequest="1" />
+
+        <CollectionView x:Name="CVListaContactos" Grid.Row="3" ItemsSource="{Binding GetsListContactos}" SelectionMode="Single" SelectionChanged="CVListaContactos_SelectionChanged"  >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="15,10,15,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Frame
+                            Grid.RowSpan="3"
+                            Margin="20"
+                            Padding="0"
+                            CornerRadius="20"
+                            HasShadow="False"
+                            IsClippedToBounds="True">
+                            <Image
+                                Grid.RowSpan="3"
+                                HeightRequest="70"
+                                Source="{Binding FotoUsuario}"
+                                WidthRequest="70" />
+                        </Frame>
+
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Orientation="Horizontal">
+                            <Label
+                                FontSize="Medium"
+                                Text="{Binding NombreUsuario}" />
+                            <Label
+                                FontSize="Medium"
+                                HorizontalOptions="StartAndExpand"
+                                Text="{Binding ApellidoUsuario}" />
+                        </StackLayout>
+
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="Small"
+                            LineBreakMode="TailTruncation"
+                            Text="{Binding NumCellContacto}" />
+
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            FontSize="12"
+                            Text="{Binding Correo}"
+                            TextColor="#888888" />
+
+
+                        <BoxView
+                            Grid.Row="3"
+                            Grid.ColumnSpan="2"
+                            Margin="-10,10,-10,0"
+                            BackgroundColor="#DDD"
+                            HeightRequest="1" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

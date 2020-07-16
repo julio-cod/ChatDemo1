@@ -15,8 +15,8 @@
 
 
     <views:EmptyPage Icon="home.png" />
-    <views:EmptyPage Icon="search.png"/>
-    <views:ListaUsuariosPage Icon="chat.png"/>
+    <views:BuscContactoPage Icon="search.png"/>
+    <views:ListaContactoPage Icon="chat.png"/>
     <views:EmptyPage Icon="settings.png"/>
 
 </TabbedPage>
