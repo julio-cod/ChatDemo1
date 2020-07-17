@@ -62,8 +62,9 @@ namespace ChatDemo1.Views
 
                     (this.BindingContext as ContactoViewModel).AgregarContactoCommand.Execute(null);
 
-                    //bool answerPrueb = await DisplayAlert("Pueba ver Contacto", "El contacto es: " + NombreUsuario, "Si", "No");
-                    //await Navigation.PushAsync(new ChatPageNew(usuarioPerfilModel.IdUsuario.ToString(), usuarioPerfilModel.NombreUsuario, usuarioPerfilModel.ApellidoUsuario, usuarioPerfilModel.Correo, usuarioPerfilModel.NumCell, usuarioPerfilModel.FotoUsuario));
+                    await Navigation.PushAsync(new ChatPageNew(IdUsuarioReceptor.ToString(), NombreUsuario, ApellidoUsuario, Correo, NumCellContacto, FotoUsuario));
+
+                   
                 }
                 else
                 {

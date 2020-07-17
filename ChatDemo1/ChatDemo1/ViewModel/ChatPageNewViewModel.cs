@@ -35,7 +35,6 @@ namespace ChatDemo1.ViewModel
         {
             CargarMensajeGetDataAsync();
 
-
             MessageAppearingCommand = new Command<MessageModel>(OnMessageAppearing);
             MessageDisappearingCommand = new Command<MessageModel>(OnMessageDisappearing);
 

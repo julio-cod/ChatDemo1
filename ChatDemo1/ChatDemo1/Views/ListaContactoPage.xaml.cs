@@ -18,6 +18,7 @@ namespace ChatDemo1.Views
         {
             InitializeComponent();
             BindingContext = new ContactoViewModel();
+       
         }
 
         private async void CVListaContactos_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -30,5 +31,7 @@ namespace ChatDemo1.Views
              
             }
         }
+
+     
     }
 }

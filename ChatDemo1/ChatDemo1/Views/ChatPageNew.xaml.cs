@@ -20,7 +20,7 @@ namespace ChatDemo1.Views
         {
             InitializeComponent();
             
-            Title = Title + " "+ NombreUsuario +" "+ ApellidoUsuario;
+            Title = NombreUsuario +" "+ ApellidoUsuario;
             IdReceptor = int.Parse(IdUsuarioReceptor);
             BindingContext = new ChatPageNewViewModel();
 

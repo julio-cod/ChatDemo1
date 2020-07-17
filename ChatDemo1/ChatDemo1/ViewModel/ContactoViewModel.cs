@@ -54,10 +54,11 @@ namespace ChatDemo1.ViewModel
 
 
             });
-            
+
+
         }
 
-       
+
 
 
         private async void BuscarContactos()
@@ -83,7 +84,7 @@ namespace ChatDemo1.ViewModel
             {
                 Debug.WriteLine("un error ha ocurrido mientras cargaba la data");
             }
-
+            
 
         }
 
@@ -105,17 +106,49 @@ namespace ChatDemo1.ViewModel
                  ApellidoUsuario = BuscContactoPage.ApellidoUsuario,
                  Correo = BuscContactoPage.Correo,
                  FotoUsuario = BuscContactoPage.FotoUsuario 
-                /*
-                IdUsuario = 1,
-                NumCellContacto = "80987389898",
-                IdUsuarioReceptor = 9,
-                NombreUsuario = "prueba nombre",
-                ApellidoUsuario = "prueba apellido",
-                Correo = "pruebacorreo@otmail.com",
-                FotoUsuario = "fotousuario.jpg"
-                */
+              
 
         };
+            var jsonObject = JsonConvert.SerializeObject(newSpost);
+            var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+
+            var response = await httpClient.PostAsync(uri, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                AgrgarEsteContacto();
+                Debug.WriteLine("Datos Guardados");
+
+
+            }
+            else
+            {
+                Debug.WriteLine("Error ha ocurrido mientras se Guardaba la data");
+            }
+        
+
+        }
+
+        private async void AgrgarEsteContacto()
+        {
+
+            var uri = new Uri("http://julioapp.somee.com/api/GrupoContacto");
+
+            var httpClient = new HttpClient();
+
+            var newSpost = new ContactoModel()
+            {
+
+                IdUsuario = BuscContactoPage.IdUsuarioReceptor,
+                NumCellContacto = MainPage.NumCellContacto,
+                IdUsuarioReceptor = MainPage.User,
+                NombreUsuario = MainPage.NombreUsuario,
+                ApellidoUsuario = MainPage.ApellidoUsuario,
+                Correo = MainPage.Correo,
+                FotoUsuario = MainPage.FotoUsuario
+
+
+            };
             var jsonObject = JsonConvert.SerializeObject(newSpost);
             var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
 
@@ -132,7 +165,7 @@ namespace ChatDemo1.ViewModel
             {
                 Debug.WriteLine("Error ha ocurrido mientras se Guardaba la data");
             }
-        
+
 
         }
 

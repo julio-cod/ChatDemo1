@@ -17,8 +17,12 @@ namespace ChatDemo1 {
     public partial class MainPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::ChatDemo1.Views.ListaContactoPage tabListaContactos;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainPage));
+            tabListaContactos = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ChatDemo1.Views.ListaContactoPage>(this, "tabListaContactos");
         }
     }
 }

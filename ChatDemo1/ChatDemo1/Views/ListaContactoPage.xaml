@@ -36,7 +36,7 @@
             BackgroundColor="#DDD"
             HeightRequest="1" />
 
-        <CollectionView x:Name="CVListaContactos" Grid.Row="3" ItemsSource="{Binding GetsListContactos}" SelectionMode="Single" SelectionChanged="CVListaContactos_SelectionChanged"  >
+        <CollectionView x:Name="CVListaContactos" Grid.Row="3" ItemsSource="{Binding GetsListContactos}" SelectionMode="Single" SelectionChanged="CVListaContactos_SelectionChanged" >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="15,10,15,0">
@@ -106,4 +106,5 @@
         </CollectionView>
 
     </Grid>
+
 </ContentPage>

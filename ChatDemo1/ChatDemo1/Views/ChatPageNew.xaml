@@ -7,8 +7,7 @@
              x:Class="ChatDemo1.Views.ChatPageNew"
              xmlns:local="clr-namespace:ChatDemo1.Helpers" 
              xmlns:partials="clr-namespace:ChatDemo1.Views.Partials" 
-             xmlns:controls="clr-namespace:ChatDemo1.Controls"
-             Title="Nombre: ">
+             xmlns:controls="clr-namespace:ChatDemo1.Controls">
    
         <ContentPage.Resources>
             <ResourceDictionary>

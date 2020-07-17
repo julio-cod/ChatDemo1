@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatDemo1.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,15 +15,20 @@ namespace ChatDemo1
     public partial class MainPage
     {
         public static int User = 1;
-        
+        public static string NumCellContacto = "8093456543";
+        //public static int IdUsuarioReceptor = 0;
+        public static string NombreUsuario = "Jaz";
+        public static string ApellidoUsuario = "Crim";
+        public static string Correo = "jaz@hotmail.com";
+        public static string FotoUsuario = "http://julioapp.somee.com/imagenPerfil/jazz1img.jpg";
+
         public MainPage()
         {
             InitializeComponent();
 
+
         }
 
-
-
-
+       
     }
 }
