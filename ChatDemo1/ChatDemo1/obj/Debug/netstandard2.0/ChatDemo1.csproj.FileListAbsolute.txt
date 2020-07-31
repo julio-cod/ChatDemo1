@@ -21,3 +21,4 @@ C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Vi
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\Cells\OutgoingViewCellNew.xaml.g.cs
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\BuscContactoPage.xaml.g.cs
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\ListaContactoPage.xaml.g.cs
+C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\RegistroInicioPage.xaml.g.cs

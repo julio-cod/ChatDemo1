@@ -1,4 +1,5 @@
 ﻿using ChatDemo1.Model;
+using ChatDemo1.Views;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,13 +8,15 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace ChatDemo1.ViewModel
 {
     public class UsuariosPerfilViewModel : INotifyPropertyChanged
     {
-        
 
+        public ICommand RegistroIncioCommand { get; set; }
         private List<UsuarioPerfilModel> _GetsList { get; set; }
         public List<UsuarioPerfilModel> GetsList
         {
@@ -40,6 +43,15 @@ namespace ChatDemo1.ViewModel
         public UsuariosPerfilViewModel()
         {
             GetDataAsyncListaUsuarioPerfil();
+
+            RegistroIncioCommand = new Command(() =>
+            {
+                RegistroInicio();
+
+
+            });
+
+
             //PostDataAsync();
             //PustDataAsync();
             //DeleteDataAsync();
@@ -72,7 +84,40 @@ namespace ChatDemo1.ViewModel
 
         }
 
-       
+        private async void RegistroInicio()
+        {
+
+            var uri = new Uri("http://julioapp.somee.com/api/UsuarioPerfil");
+
+            var httpClient = new HttpClient();
+
+            var newSpost = new UsuarioPerfilModel()
+            {
+
+                NombreUsuario = RegistroInicioPage.NombreUsuario,
+                ApellidoUsuario = RegistroInicioPage.ApellidoUsuario,
+                Correo = RegistroInicioPage.Correo,
+                NumCell = RegistroInicioPage.NumCell,
+                FotoUsuario = RegistroInicioPage.FotoUsuario
+
+
+            };
+            var jsonObject = JsonConvert.SerializeObject(newSpost);
+            var content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+
+            var response = await httpClient.PostAsync(uri, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Debug.WriteLine("Datos Guardados");
+            }
+            else
+            {
+                Debug.WriteLine("Error ha ocurrido mientras se Guardaba la data");
+            }
+
+
+        }
 
     }
 }

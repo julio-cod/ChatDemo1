@@ -43,7 +43,7 @@ namespace ChatDemo1.ViewModel
                 if (!string.IsNullOrEmpty(TextToSend))
                 {
                     //Messages.Insert(0, new MessageModel() { Mensaje = TextToSend, IdEmisor = MainPage.User});
-                    PostDataAsync();
+                    PostDataAsyncEnviarMensaje();
                     TextToSend = string.Empty;
                     CargarMensajeGetDataAsync();
                 }
@@ -132,7 +132,7 @@ namespace ChatDemo1.ViewModel
 
        }
 
-        private async void PostDataAsync()
+        private async void PostDataAsyncEnviarMensaje()
         {
 
             var uri = new Uri("http://julioapp.somee.com/api/Chat");

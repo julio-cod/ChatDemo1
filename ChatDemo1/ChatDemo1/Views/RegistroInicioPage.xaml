@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChatDemo1.Views.RegistroInicioPage"
+             Title="JChat">
+    <ContentPage.Content>
+        <ScrollView>
+                <StackLayout>
+                    <StackLayout>
+                        <Label Text="Registrarse" Font="25" TextColor="Blue" HorizontalOptions="Center"></Label>
+                        <Entry Placeholder="Nombre" x:Name="txtNombre"></Entry>
+                        <Entry Placeholder="Apellido" x:Name="txtApellido"></Entry>
+                        <Entry Placeholder="Correo" x:Name="txtCorreo"></Entry>
+                        <Entry Placeholder="Num. Cell" x:Name="txtNumCell" Keyboard="Numeric"></Entry>
+                        <Entry Placeholder="Imagen" x:Name="txtFotoUsuario"></Entry>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button Text="Guardar" BackgroundColor="Green" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"  WidthRequest="120" ></Button>
+                        <Button Text="Cancelar" BackgroundColor="OrangeRed" x:Name="btnCancelar" Clicked="btnCancelar_Clicked"  WidthRequest="120" ></Button>
+                    </StackLayout>
+                </StackLayout>
+
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
