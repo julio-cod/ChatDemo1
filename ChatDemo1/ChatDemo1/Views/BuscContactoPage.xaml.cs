@@ -61,10 +61,10 @@ namespace ChatDemo1.Views
                     FotoUsuario = usuarioPerfilModel.FotoUsuario;
 
                     (this.BindingContext as ContactoViewModel).AgregarContactoCommand.Execute(null);
-
+                    
                     await Navigation.PushAsync(new ChatPageNew(IdUsuarioReceptor.ToString(), NombreUsuario, ApellidoUsuario, Correo, NumCellContacto, FotoUsuario));
+                    //await Navigation.PushAsync(new ListaContactoPage());
 
-                   
                 }
                 else
                 {
