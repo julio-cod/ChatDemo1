@@ -20,15 +20,29 @@ namespace ChatDemo1.Views
         public static string Correo = "";
         public static string NumCell = "";
         public static string FotoUsuario = "";
-
+        string idusuario;
 
         public RegistroInicioPage()
         {
             InitializeComponent();
-            
+            this.BindingContext = new ConfgUsuarioLocalViewModel();
+           
 
         }
-       
+
+        public RegistroInicioPage(string IdUsuario, string NombreUsuario, string ApellidoUsuario, string Correo, string NumCell, string FotoUsuario)
+        {
+            InitializeComponent();
+            this.BindingContext = new ConfgUsuarioLocalViewModel();
+            idusuario = IdUsuario;
+            txtNombre.Text = NombreUsuario;
+            txtApellido.Text = ApellidoUsuario;
+            txtCorreo.Text = Correo;
+            txtNumCell.Text = NumCell;
+            txtFotoUsuario.Text = FotoUsuario;
+
+        }
+
         private async void btnGuardar_Clicked(object sender, EventArgs e)
         {
             
@@ -38,7 +52,7 @@ namespace ChatDemo1.Views
             NumCell = txtNumCell.Text;
             FotoUsuario = txtFotoUsuario.Text; 
             
-            if (txtFotoUsuario.Text == "")
+            if (txtFotoUsuario.Text == "" || txtFotoUsuario.Placeholder == "Imagen")
             {
                 FotoUsuario = "http://julioapp.somee.com/imagenPerfil/imagenPerfil.jpg";
             }
@@ -64,13 +78,19 @@ namespace ChatDemo1.Views
             txtApellido.Placeholder = "Apellido";
             txtCorreo.Placeholder = "Correo";
             txtNumCell.Placeholder = "Num. Cell";
-            txtFotoUsuario.Placeholder = "Imangen";
+            txtFotoUsuario.Placeholder = "Imagen";
 
 
         }
 
+        private async void btnMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
 
+        private void btnEliminar_Clicked(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

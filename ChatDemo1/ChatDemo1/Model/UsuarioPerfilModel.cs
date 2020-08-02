@@ -7,6 +7,7 @@ namespace ChatDemo1.Model
 {
     public class UsuarioPerfilModel
     {
+        
         public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string ApellidoUsuario { get; set; }

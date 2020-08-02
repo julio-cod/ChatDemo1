@@ -26,7 +26,7 @@ namespace ChatDemo1.Helpers
                 return null;
 
 
-            return (messageVm.IdEmisor == MainPage.User) ? outgoingDataTemplate : incomingDataTemplate;
+            return (messageVm.IdEmisor == MainPage.idUser) ? outgoingDataTemplate : incomingDataTemplate;
         }
 
     }

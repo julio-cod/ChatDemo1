@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChatDemo1.Views.VerUsuarioLocalPage">
+    <StackLayout>
+        <Label Text="Usuario Local" HorizontalOptions="Center" TextColor="Green" ></Label>
+        <CollectionView x:Name="CVUsuarioLocal" ItemsSource="{Binding ListadoUsuarioLocal}" SelectionMode="Single" SelectionChanged="CVUsuarioLocal_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="15,10,15,0">
+                        <StackLayout>
+                            <Label x:Name="lblIdUsuario" Text="{Binding IdUsuario}"></Label>
+                            <Label x:Name="lblNombre" Text="{Binding NombreUsuario}"></Label>
+                            <Label x:Name="lblApellido" Text="{Binding ApellidoUsuario}"></Label>
+                            <Label x:Name="lblCorreo" Text="{Binding Correo}"></Label>
+                            <Label x:Name="lblNumCell" Text="{Binding NumCell}"></Label>
+                            <Label x:Name="lblFotoUsuario" Text="{Binding FotoUsuario}"></Label>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>

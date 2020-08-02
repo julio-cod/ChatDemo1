@@ -141,7 +141,7 @@ namespace ChatDemo1.ViewModel
 
                 IdUsuario = BuscContactoPage.IdUsuarioReceptor,
                 NumCellContacto = MainPage.NumCellContacto,
-                IdUsuarioReceptor = MainPage.User,
+                IdUsuarioReceptor = MainPage.idUser,
                 NombreUsuario = MainPage.NombreUsuario,
                 ApellidoUsuario = MainPage.ApellidoUsuario,
                 Correo = MainPage.Correo,
@@ -188,7 +188,7 @@ namespace ChatDemo1.ViewModel
 
         private async void ListaContactos()
         {
-            int idUsuario = MainPage.User;
+            int idUsuario = MainPage.idUser;
             var uri = new Uri("http://julioapp.somee.com/api/GrupoContacto?idUsuario=");
 
             var httpClient = new HttpClient();

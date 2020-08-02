@@ -4,8 +4,8 @@ git init
 git add README.md 
 git commit -m "first commit" 
 git remote add origin https://github.com/julio-cod/ChatDemo1.git
- git push -u origin master
+git push -u origin master
                 
 ... o empujar un repositorio existente desde la línea de comando
 git remote add origin https://github.com/julio-cod/ChatDemo1.git
- git push -u maestro de origen
+ git push -u maestro origen

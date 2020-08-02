@@ -17,6 +17,6 @@
     <views:EmptyPage Icon="home.png" />
     <views:BuscContactoPage Icon="search.png"/>
     <views:ListaContactoPage Icon="chat.png" x:Name="tabListaContactos" />
-    <views:EmptyPage Icon="settings.png"/>
+    <views:VerUsuarioLocalPage Icon="settings.png"/>
 
 </TabbedPage>

@@ -107,7 +107,7 @@ namespace ChatDemo1.ViewModel
        
        private async void CargarMensajeGetDataAsync()
        {
-            int IdEmisor = MainPage.User;
+            int IdEmisor = MainPage.idUser;
             int IdRecepter = ChatPageNew.IdReceptor;
 
            var uri = new Uri("http://julioapp.somee.com/api/Chat?");
@@ -144,7 +144,7 @@ namespace ChatDemo1.ViewModel
             var newSpost = new MessageModel()
             {
 
-                IdEmisor = MainPage.User,
+                IdEmisor = MainPage.idUser,
                 IdReceptor = ChatPageNew.IdReceptor,
                 Mensaje = TextToSend,
                 Fecha = DateTime.Today

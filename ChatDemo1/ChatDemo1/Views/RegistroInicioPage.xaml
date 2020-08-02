@@ -11,19 +11,21 @@
                 <StackLayout>
                     <StackLayout>
                         <Label Text="Registrarse" Font="25" TextColor="Blue" HorizontalOptions="Center"></Label>
-                        <Entry Placeholder="Nombre" x:Name="txtNombre"></Entry>
-                        <Entry Placeholder="Apellido" x:Name="txtApellido"></Entry>
-                        <Entry Placeholder="Correo" x:Name="txtCorreo"></Entry>
-                        <Entry Placeholder="Num. Cell" x:Name="txtNumCell" Keyboard="Numeric"></Entry>
-                        <Entry Placeholder="Imagen" x:Name="txtFotoUsuario"></Entry>
+                    <Entry Placeholder="Nombre" x:Name="txtNombre" Text="{Binding NombreUsuario}" ></Entry>
+                    <Entry Placeholder="Apellido" x:Name="txtApellido" Text="{Binding ApellidoUsuario}"></Entry>
+                    <Entry Placeholder="Correo" x:Name="txtCorreo" Text="{Binding Correo}"></Entry>
+                    <Entry Placeholder="Num. Cell" x:Name="txtNumCell" Keyboard="Numeric" Text="{Binding NumCell}"></Entry>
+                    <Entry Placeholder="Imagen" x:Name="txtFotoUsuario" Text="{Binding FotoUsuario}"></Entry>
 
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Button Text="Guardar" BackgroundColor="Green" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"  WidthRequest="120" ></Button>
-                        <Button Text="Cancelar" BackgroundColor="OrangeRed" x:Name="btnCancelar" Clicked="btnCancelar_Clicked"  WidthRequest="120" ></Button>
-                    </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Guardar" BackgroundColor="Green" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"  WidthRequest="120" Command="{Binding Guardar}" ></Button>
+                    <Button Text="Cancelar" BackgroundColor="OrangeRed" x:Name="btnCancelar" Clicked="btnCancelar_Clicked"  WidthRequest="120" Command="{Binding Nuevo}" ></Button>
                 </StackLayout>
-
-            </ScrollView>
+                <Button Text="Menu" BackgroundColor="Green" x:Name="btnMenu" Clicked="btnMenu_Clicked"  WidthRequest="120" ></Button>
+                <Button Text="Eliminar" BackgroundColor="OrangeRed" x:Name="btnEliminar" Clicked="btnEliminar_Clicked"  WidthRequest="120" Command="{Binding Eliminar}" ></Button>
+            </StackLayout>
+            
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
