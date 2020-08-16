@@ -1,4 +1,5 @@
-﻿using ChatDemo1.Model;
+﻿using ChatDemo1.Data;
+using ChatDemo1.Model;
 using ChatDemo1.Views;
 using Newtonsoft.Json;
 using System;
@@ -115,7 +116,64 @@ namespace ChatDemo1.ViewModel
 
 
         }
-        
+
+        private async void BuscarIdUsuarioWebAcutalizarLocal(string numCell)
+        {
+            /*
+
+            var uri = new Uri("http://julioapp.somee.com/api/UsuarioPerfil?numCell=");
+
+            var httpClient = new HttpClient();
+
+            var response = await httpClient.GetAsync(uri + numCell);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                //var gets = JsonConvert.DeserializeObject<List<UsuarioPerfilModel>>(content);
+                var gets = JsonConvert.DeserializeObject<List<UsuarioPerfilModel>>(content);
+
+                //GetsList = new List<UsuarioPerfilModel>(gets);
+                GetsList = new List<UsuarioPerfilModel>(gets);
+
+
+                RegistroInicioPage.Idusuario = GetsList[0].IdUsuario;
+
+                //txtIdUsuario.Text = Idusuario.ToString();
+                //(this.BindingContext as ConfgUsuarioLocalViewModel).ActualizarId.Execute(null);
+                UsuarioLocalModel modelo = new UsuarioLocalModel()
+                {
+                    //IdUsuario = RegistroInicioPage.Idusuario,
+                    IdUsuario = GetsList[0].IdUsuario,
+                    NombreUsuario = GetsList[0].NombreUsuario,
+                    ApellidoUsuario = GetsList[0].ApellidoUsuario,
+                    Correo = GetsList[0].Correo,
+                    NumCell = GetsList[0].NumCell,
+                    FotoUsuario = GetsList[0].FotoUsuario,
+                    Id = Id
+                };
+
+                using (var contexto = new DataContext())
+                {
+                    if (modelo.FotoUsuario == string.Empty || modelo.FotoUsuario == "" || modelo.FotoUsuario == null)
+                    {
+                        modelo.FotoUsuario = "http://julioapp.somee.com/imagenPerfil/imagenPerfil.jpg";
+                    }
+
+                    contexto.Actualizar(modelo);
+                }
+
+
+            }
+            else
+            {
+                Debug.WriteLine("un error ha ocurrido mientras cargaba la data");
+            }
+
+            */
+
+        }
+
         private async void BuscarIdUsuarioWeb(string numCell)
         {
             //string numCell = BuscContactoPage.numCell;

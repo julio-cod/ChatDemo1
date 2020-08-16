@@ -28,22 +28,44 @@ namespace ChatDemo1
         public MainPage()
         {
             InitializeComponent();
+            try
+            {
+                BindingContext = new VerUsuarioLocalViewModel();
+                (this.BindingContext as VerUsuarioLocalViewModel).VerUsuarioLocalCommand.Execute(null);
+
+                if (idUser == -1 || idUser.ToString() == string.Empty || idUser.ToString() == null)
+                {
+                    Navigation.PushAsync(new RegistroInicioPage());
+                }
+
+                else
+                {
+
+
+                    DisplayAlert("Inicio de App", "Bienvenido " + idUser + " " + NombreUsuario + " " + ApellidoUsuario + " " + NumCellContacto + " " + Correo + " " + FotoUsuario, "Iniciar");
+
+                }
+            }
+            catch (Exception)
+            {
+
+                //throw;
+
+                if (idUser == -1 || idUser.ToString() == string.Empty || idUser.ToString() == null)
+                {
+                    Navigation.PushAsync(new RegistroInicioPage());
+                }
+
+                else
+                {
+
+
+                    DisplayAlert("Inicio de App", "Bienvenido " + idUser + " " + NombreUsuario + " " + ApellidoUsuario + " " + NumCellContacto + " " + Correo + " " + FotoUsuario, "Iniciar");
+
+                }
+
+            }
             
-            BindingContext = new VerUsuarioLocalViewModel();
-            (this.BindingContext as VerUsuarioLocalViewModel).VerUsuarioLocalCommand.Execute(null);
-
-            if (idUser == -1 || idUser.ToString() == string.Empty || idUser.ToString() == null)
-            {
-                Navigation.PushAsync(new RegistroInicioPage());
-            }
-
-            else
-            {
-                
-
-                DisplayAlert("Inicio de App", "Bienvenido " + idUser + " " + NombreUsuario + " " + ApellidoUsuario + " " + NumCellContacto + " " + Correo + " " + FotoUsuario, "Iniciar");
-
-            }
 
 
 
