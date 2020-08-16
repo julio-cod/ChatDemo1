@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -17,6 +18,8 @@ namespace ChatDemo1.ViewModel
     {
 
         public ICommand RegistroIncioCommand { get; set; }
+
+
         private List<UsuarioPerfilModel> _GetsList { get; set; }
         public List<UsuarioPerfilModel> GetsList
         {
@@ -39,7 +42,7 @@ namespace ChatDemo1.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
+        
         public UsuariosPerfilViewModel()
         {
             GetDataAsyncListaUsuarioPerfil();
@@ -48,17 +51,11 @@ namespace ChatDemo1.ViewModel
             {
                 RegistroInicio();
 
-
             });
 
 
-            //PostDataAsync();
-            //PustDataAsync();
-            //DeleteDataAsync();
-
-
         }
-
+        
         private async void GetDataAsyncListaUsuarioPerfil()
         {
 
@@ -86,7 +83,7 @@ namespace ChatDemo1.ViewModel
 
         private async void RegistroInicio()
         {
-
+          
             var uri = new Uri("http://julioapp.somee.com/api/UsuarioPerfil");
 
             var httpClient = new HttpClient();
@@ -115,6 +112,38 @@ namespace ChatDemo1.ViewModel
             {
                 Debug.WriteLine("Error ha ocurrido mientras se Guardaba la data");
             }
+
+
+        }
+        
+        private async void BuscarIdUsuarioWeb(string numCell)
+        {
+            //string numCell = BuscContactoPage.numCell;
+
+            var uri = new Uri("http://julioapp.somee.com/api/UsuarioPerfil?numCell=");
+
+            var httpClient = new HttpClient();
+
+            var response = await httpClient.GetAsync(uri + numCell);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var gets = JsonConvert.DeserializeObject<List<UsuarioPerfilModel>>(content);
+
+                GetsList = new List<UsuarioPerfilModel>(gets);
+
+                //List<UsuarioPerfilModel> itemUsuario = new List<UsuarioPerfilModel>(gets);
+
+                RegistroInicioPage.Idusuario = GetsList[0].IdUsuario;
+          
+
+            }
+            else
+            {
+                Debug.WriteLine("un error ha ocurrido mientras cargaba la data");
+            }
+
 
 
         }

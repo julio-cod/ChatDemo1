@@ -17,7 +17,7 @@ namespace ChatDemo1.Data
             cnn = new SQLiteConnection(Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "DBchatdemo.db3"));
             cnn.CreateTable<UsuarioLocalModel>();
 
-
+            //cnn.DropTable<UsuarioLocalModel>();
         }
 
         public void Dispose()
@@ -54,6 +54,26 @@ namespace ChatDemo1.Data
 
 
             //return cnn.Query<UsuarioLocalModel>("select * from Valuation where IdUsuario = ?", id);
+
+
+        }
+
+        public UsuarioLocalModel ConsultaUsuario()
+        {
+
+            return cnn.Table<UsuarioLocalModel>().FirstOrDefault();
+
+
+            //return cnn.Query<UsuarioLocalModel>("select * from Valuation where IdUsuario = ?", id);
+
+
+        }
+
+        public void EliminarTabla()
+        {
+
+            cnn.DropTable<UsuarioLocalModel>();
+
 
 
         }

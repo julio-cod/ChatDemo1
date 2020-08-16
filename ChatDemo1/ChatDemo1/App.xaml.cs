@@ -15,8 +15,8 @@ namespace ChatDemo1
             //MainPage = new MainPage();
             //MainPage = new ListaUsuariosPage(); 
             //MainPage = new RegistroInicioPage();
-            MainPage = new NavigationPage(new RegistroInicioPage());
-            //MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NavigationPage(new RegistroInicioPage());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

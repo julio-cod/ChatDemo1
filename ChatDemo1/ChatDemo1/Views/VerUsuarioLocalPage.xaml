@@ -12,6 +12,7 @@
                 <DataTemplate>
                     <Grid Padding="15,10,15,0">
                         <StackLayout>
+                            <Label x:Name="lblId" Text="{Binding Id}"></Label>
                             <Label x:Name="lblIdUsuario" Text="{Binding IdUsuario}"></Label>
                             <Label x:Name="lblNombre" Text="{Binding NombreUsuario}"></Label>
                             <Label x:Name="lblApellido" Text="{Binding ApellidoUsuario}"></Label>

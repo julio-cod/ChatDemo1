@@ -38,22 +38,18 @@ namespace ChatDemo1.ViewModel
         public VerUsuarioLocalViewModel()
         {
             ListaUsuarioLocal();
-       
+            
+                 VerUsuarioLocalCommand = new Command(() =>
+                 {
+                     BuscarUsuarioLocal();
+
+
+                 });
+                 
 
         }
+
         
-        public VerUsuarioLocalViewModel(int idUsuario)
-        {
-            ListaUsuarioLocal();
-
-            VerUsuarioLocalCommand = new Command(() =>
-            {
-                BuscarUsuarioLocal(idUsuario);
-
-
-            });
-
-        }
 
         public void ListaUsuarioLocal()
         {
@@ -67,12 +63,14 @@ namespace ChatDemo1.ViewModel
         }
 
         
-        public void BuscarUsuarioLocal(int idUsuario)
+        public void BuscarUsuarioLocal()
         {
             
             using (var contexto = new DataContext())
             {
-                UsuarioLocalModel modelo = contexto.ConsultaUsuarioLocal(idUsuario);
+                //UsuarioLocalModel modelo = contexto.ConsultaUsuarioLocal(idUsuario);
+
+                UsuarioLocalModel modelo = contexto.ConsultaUsuario();
 
                 MainPage.idUser = modelo.IdUsuario;
                 MainPage.NombreUsuario = modelo.NombreUsuario;
