@@ -99,7 +99,7 @@ namespace ChatDemo1.ViewModel
             var newSpost = new ContactoModel()
             {
 
-                 IdUsuario = BuscContactoPage.IdUsuario,
+                 IdUsuario = MainPage.idUser,
                  NumCellContacto = BuscContactoPage.NumCellContacto,
                  IdUsuarioReceptor = BuscContactoPage.IdUsuarioReceptor,
                  NombreUsuario = BuscContactoPage.NombreUsuario,

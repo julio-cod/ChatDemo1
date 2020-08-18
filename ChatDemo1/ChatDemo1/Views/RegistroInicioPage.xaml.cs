@@ -25,6 +25,7 @@ namespace ChatDemo1.Views
         public static string NumCell = "";
         public static string FotoUsuario = "";
         public static int Idusuario;
+        public static int Id;
 
         public RegistroInicioPage()
         {
@@ -51,26 +52,77 @@ namespace ChatDemo1.Views
 
         private async void btnGuardar_Clicked(object sender, EventArgs e)
         {
-            Idusuario = 1;
-            NombreUsuario = txtNombre.Text;
-            ApellidoUsuario = txtApellido.Text;
-            Correo = txtCorreo.Text;
-            NumCell = txtNumCell.Text;
-            FotoUsuario = txtFotoUsuario.Text; 
-            
-            if (txtFotoUsuario.Text == "" || txtFotoUsuario.Placeholder == "Imagen")
+           
+            if (btnGuardar.Text == "Registarse")
+            {          
+
+                Idusuario = 0;
+                NombreUsuario = txtNombre.Text;
+                ApellidoUsuario = txtApellido.Text;
+                Correo = txtCorreo.Text;
+                NumCell = txtNumCell.Text;
+                FotoUsuario = txtFotoUsuario.Text;
+
+                if (txtFotoUsuario.Text == "" || txtFotoUsuario.Placeholder == "Imagen")
+                {
+                    FotoUsuario = "http://julioapp.somee.com/imagenPerfil/imagenPerfil.jpg";
+                }
+
+                BindingContext = new UsuariosPerfilViewModel();
+
+                (this.BindingContext as UsuariosPerfilViewModel).RegistroIncioCommand.Execute(null);
+
+                btnGuardar.Text = "Procesar Registro";
+                
+            }
+            else
             {
-                FotoUsuario = "http://julioapp.somee.com/imagenPerfil/imagenPerfil.jpg";
+                if (btnGuardar.Text == "Procesar Registro")
+                {
+                    BindingContext = new ConfgUsuarioLocalViewModel();
+                    (this.BindingContext as ConfgUsuarioLocalViewModel).Guardar.Execute(null);
+
+                    btnGuardar.Text = "Siguiente";
+
+                }
+                else
+                {
+                    if (btnGuardar.Text == "Siguiente")
+                    {
+
+                        BindingContext = new VerUsuarioLocalViewModel();
+                        (this.BindingContext as VerUsuarioLocalViewModel).VerIdUsuarioLocalCommand.Execute(null);
+
+                        BuscarIdUsuarioWebAcutalizarLocal(NumCell);
+
+                        btnGuardar.Text = "Aceptar Terminos";
+                    }
+                    else
+                    {
+                        if (btnGuardar.Text == "Aceptar Terminos")
+                        {
+
+                            BindingContext = new ConfgUsuarioLocalViewModel();
+                            (this.BindingContext as ConfgUsuarioLocalViewModel).ActualizarId.Execute(null);
+                            btnGuardar.Text = "Iniciar App";
+                        }
+                        else
+                        {
+                            if (btnGuardar.Text == "Iniciar App")
+                            {
+
+                                await Navigation.PushAsync(new MainPage());
+                            }
+
+                        }
+                    }
+                }
+
+                
+
             }
 
-            BindingContext = new UsuariosPerfilViewModel();
 
-            (this.BindingContext as UsuariosPerfilViewModel).RegistroIncioCommand.Execute(null);
-
-            BuscarIdUsuarioWebAcutalizarLocal(txtNumCell.Text);
-
-            await Navigation.PushAsync(new MainPage());
-          
         }
 
         private void btnCancelar_Clicked(object sender, EventArgs e)
@@ -104,25 +156,6 @@ namespace ChatDemo1.Views
 
         }
 
-        private void btnBuscIdUsuario_Clicked(object sender, EventArgs e)
-        {
-            //BindingContext = new UsuariosPerfilViewModel(txtNumCell.Text);
-            //(BindingContext as UsuariosPerfilViewModel).BuscarIdUsuarioCommand.Execute(null);
-
-            BuscarIdUsuarioWebAcutalizarLocal(txtNumCell.Text);
-
-          
-            
-        }
-
-        private void CVListaUsuariosPerfil_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            //int idUsuario = (e.CurrentSelection.FirstOrDefault() as UsuarioPerfilModel).IdUsuario;
-
-            //txtIdUsuario.Text = idUsuario.ToString();
-
-        }
 
         private List<UsuarioPerfilModel> _GetsList { get; set; }
         public List<UsuarioPerfilModel> GetsList
@@ -164,7 +197,7 @@ namespace ChatDemo1.Views
                 Idusuario = GetsList[0].IdUsuario;
 
                 txtIdUsuario.Text = Idusuario.ToString();
-                (this.BindingContext as ConfgUsuarioLocalViewModel).ActualizarId.Execute(null);
+                //(this.BindingContext as ConfgUsuarioLocalViewModel).ActualizarId.Execute(null);
             }
             else
             {

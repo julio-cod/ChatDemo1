@@ -16,7 +16,7 @@ namespace ChatDemo1.Views
     {
         public static string numCell = "";
 
-        public static int IdUsuario = MainPage.idUser;
+        public static int IdUsuario = -1;
         public static string NumCellContacto = "";
         public static int IdUsuarioReceptor = 0;
         public static string NombreUsuario = "";

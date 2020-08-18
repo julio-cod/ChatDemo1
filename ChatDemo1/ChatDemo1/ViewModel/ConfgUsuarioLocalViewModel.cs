@@ -80,13 +80,13 @@ namespace ChatDemo1.ViewModel
                 UsuarioLocalModel modelo = new UsuarioLocalModel()
                 {
                     IdUsuario = RegistroInicioPage.Idusuario,
-                    NombreUsuario = NombreUsuario,
-                    ApellidoUsuario = ApellidoUsuario,
-                    Correo = Correo,
-                    NumCell = NumCell,
-                    FotoUsuario = FotoUsuario
-                    
-                    
+                    NombreUsuario = RegistroInicioPage.NombreUsuario,
+                    ApellidoUsuario = RegistroInicioPage.ApellidoUsuario,
+                    Correo = RegistroInicioPage.Correo,
+                    NumCell = RegistroInicioPage.NumCell,
+                    FotoUsuario = RegistroInicioPage.FotoUsuario
+
+
                 };
 
                 
@@ -142,19 +142,19 @@ namespace ChatDemo1.ViewModel
             }
            );
 
-            
+            //actualizar usuario local con el id de la pege de resgistro de inicio
             ActualizarId = new Command(() => {
                 //ListaUsuarioLocal();
                 UsuarioLocalModel modelo = new UsuarioLocalModel()
                 {
                     //IdUsuario = RegistroInicioPage.Idusuario,
-                    IdUsuario = IdUsuario,
-                    NombreUsuario = NombreUsuario,
-                    ApellidoUsuario = ApellidoUsuario,
-                    Correo = Correo,
-                    NumCell = NumCell,
-                    FotoUsuario = FotoUsuario,
-                    Id = Id
+                    IdUsuario = RegistroInicioPage.Idusuario,
+                    NombreUsuario = RegistroInicioPage.NombreUsuario,
+                    ApellidoUsuario = RegistroInicioPage.ApellidoUsuario,
+                    Correo = RegistroInicioPage.Correo,
+                    NumCell = RegistroInicioPage.NumCell,
+                    FotoUsuario = RegistroInicioPage.FotoUsuario,
+                    Id = RegistroInicioPage.Id
                 };
 
                 using (var contexto = new DataContext())

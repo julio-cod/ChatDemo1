@@ -32,6 +32,9 @@ namespace ChatDemo1.Views
             }
         }
 
-     
+        private void btnActualizar_Clicked(object sender, EventArgs e)
+        {
+            BindingContext = new ContactoViewModel();
+        }
     }
 }

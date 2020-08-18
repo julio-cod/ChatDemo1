@@ -28,6 +28,7 @@ namespace ChatDemo1
         public MainPage()
         {
             InitializeComponent();
+            
             try
             {
                 BindingContext = new VerUsuarioLocalViewModel();
@@ -67,7 +68,7 @@ namespace ChatDemo1
             }
             
 
-
+           
 
 
         }

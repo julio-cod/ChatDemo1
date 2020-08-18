@@ -5,20 +5,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ChatDemo1.Views.ListaContactoPage">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Actualizar" BackgroundColor="Green" x:Name="btnActualizar" Clicked="btnActualizar_Clicked"  WidthRequest="120"  ></Button>
+        </StackLayout>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-        <Label
+                <Label
             FontSize="Large"
             HorizontalOptions="Center"
             Text="Chat" />
 
-        <Frame
+                <Frame
             Grid.Row="1"
             Padding="0,0,0,-1"
             BackgroundColor="#F1F1F1"
@@ -27,66 +32,66 @@
             HorizontalOptions="FillAndExpand"
             IsClippedToBounds="True">
 
-            <SearchBar HorizontalOptions="FillAndExpand" Placeholder="Buscar" />
+                    <SearchBar HorizontalOptions="FillAndExpand" Placeholder="Buscar" />
 
-        </Frame>
+                </Frame>
 
-        <BoxView
+                <BoxView
             Grid.Row="2"
             BackgroundColor="#DDD"
             HeightRequest="1" />
 
-        <CollectionView x:Name="CVListaContactos" Grid.Row="3" ItemsSource="{Binding GetsListContactos}" SelectionMode="Single" SelectionChanged="CVListaContactos_SelectionChanged" >
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="15,10,15,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
+                <CollectionView x:Name="CVListaContactos" Grid.Row="3" ItemsSource="{Binding GetsListContactos}" SelectionMode="Single" SelectionChanged="CVListaContactos_SelectionChanged" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="15,10,15,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
 
-                        <Frame
+                                <Frame
                             Grid.RowSpan="3"
                             Margin="20"
                             Padding="0"
                             CornerRadius="20"
                             HasShadow="False"
                             IsClippedToBounds="True">
-                            <Image
+                                    <Image
                                 Grid.RowSpan="3"
                                 HeightRequest="70"
                                 Source="{Binding FotoUsuario}"
                                 WidthRequest="70" />
-                        </Frame>
+                                </Frame>
 
-                        <StackLayout
+                                <StackLayout
                             Grid.Row="0"
                             Grid.Column="1"
                             Orientation="Horizontal">
-                            <Label
+                                    <Label
                                 FontSize="Medium"
                                 Text="{Binding NombreUsuario}" />
-                            <Label
+                                    <Label
                                 FontSize="Medium"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding ApellidoUsuario}" />
-                        </StackLayout>
+                                </StackLayout>
 
 
-                        <Label
+                                <Label
                             Grid.Row="1"
                             Grid.Column="1"
                             FontSize="Small"
                             LineBreakMode="TailTruncation"
                             Text="{Binding NumCellContacto}" />
 
-                        <Label
+                                <Label
                             Grid.Row="2"
                             Grid.Column="1"
                             FontSize="12"
@@ -94,17 +99,21 @@
                             TextColor="#888888" />
 
 
-                        <BoxView
+                                <BoxView
                             Grid.Row="3"
                             Grid.ColumnSpan="2"
                             Margin="-10,10,-10,0"
                             BackgroundColor="#DDD"
                             HeightRequest="1" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-    </Grid>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+    
+    
 
 </ContentPage>
