@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="ChatDemo1.Views.VerUsuarioLocalPage">
     <StackLayout>
-        <Label Text="Usuario Local" HorizontalOptions="Center" TextColor="Green" ></Label>
+        <Label Text="Configuracion" HorizontalOptions="Center" TextColor="Green" ></Label>
         <CollectionView x:Name="CVUsuarioLocal" ItemsSource="{Binding ListadoUsuarioLocal}" SelectionMode="Single" SelectionChanged="CVUsuarioLocal_SelectionChanged">
             <CollectionView.ItemTemplate>
                 <DataTemplate>

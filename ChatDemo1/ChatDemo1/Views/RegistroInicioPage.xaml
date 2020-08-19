@@ -21,11 +21,10 @@
 
                     </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button Text="Registarse" BackgroundColor="Green" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"  WidthRequest="150"  ></Button>
+                    <Button Text="Registarse" BackgroundColor="Green" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"  WidthRequest="160"  ></Button>
                 </StackLayout>
-                <Button Text="Cancelar" BackgroundColor="OrangeRed" x:Name="btnCancelar" Clicked="btnCancelar_Clicked"  WidthRequest="120" Command="{Binding Nuevo}" ></Button>
-                <Button Text="Menu" BackgroundColor="Green" x:Name="btnMenu" Clicked="btnMenu_Clicked"  WidthRequest="120" ></Button>
-                <Button Text="Eliminar" BackgroundColor="OrangeRed" x:Name="btnEliminar" Clicked="btnEliminar_Clicked"  WidthRequest="120" Command="{Binding Eliminar}" ></Button>
+                
+
 
                 
             </StackLayout>

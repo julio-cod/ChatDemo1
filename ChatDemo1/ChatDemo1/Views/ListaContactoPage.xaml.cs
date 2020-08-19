@@ -14,11 +14,32 @@ namespace ChatDemo1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaContactoPage : ContentPage
     {
+
+        public static bool nuevoContacAgregado = false;
+        public static int contCantContactos = 0;
+        public static int catnContacto = 0;
         public ListaContactoPage()
         {
+            
             InitializeComponent();
             BindingContext = new ContactoViewModel();
-       
+            
+            //Ejecucion por tiempo establecido
+            Device.StartTimer(TimeSpan.FromSeconds(2), () =>
+            {
+                (this.BindingContext as ContactoViewModel).VerCantContactoCommand.Execute(null);
+
+                if (nuevoContacAgregado)
+                {
+                    BindingContext = new ContactoViewModel();
+                    nuevoContacAgregado = false;
+                }
+
+                return true;
+            });
+            
+            
+
         }
 
         private async void CVListaContactos_SelectionChanged(object sender, SelectionChangedEventArgs e)

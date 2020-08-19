@@ -18,6 +18,10 @@ namespace ChatDemo1.ViewModel
 
         public ICommand AgregarContactoCommand { get; set; }
 
+        public ICommand VerCantContactoCommand { get; set; }
+
+        public bool nuevoContacAgregado { get; set; } = false;
+
         private List<UsuarioPerfilModel> _GetsList { get; set; }
         public List<UsuarioPerfilModel> GetsList
         {
@@ -34,23 +38,30 @@ namespace ChatDemo1.ViewModel
                 }
             }
         }
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+
         public ContactoViewModel()
         {
             BuscarContactos();
-
             ListaContactos();
-
+             
 
             AgregarContactoCommand = new Command(() =>
             {
                 AgrgarContacto();
+
+
+            });
+
+            VerCantContactoCommand = new Command(() =>
+            {
+                ContadorContactos();
 
 
             });
@@ -186,8 +197,12 @@ namespace ChatDemo1.ViewModel
             }
         }
 
+        
+        
         private async void ListaContactos()
         {
+            int cantContactos;
+
             int idUsuario = MainPage.idUser;
             var uri = new Uri("http://julioapp.somee.com/api/GrupoContacto?idUsuario=");
 
@@ -201,6 +216,64 @@ namespace ChatDemo1.ViewModel
                 var gets = JsonConvert.DeserializeObject<List<ContactoModel>>(content);
 
                 GetsListContactos = new List<ContactoModel>(gets);
+
+            }
+            else
+            {
+                Debug.WriteLine("un error ha ocurrido mientras cargaba la data");
+            }
+
+
+        }
+
+        private List<ContactoModel> _GetCantContactos { get; set; }
+        public List<ContactoModel> GetCantContactos
+        {
+            get
+            {
+                return _GetCantContactos;
+            }
+            set
+            {
+                if (value != _GetCantContactos)
+                {
+                    _GetCantContactos = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private async void ContadorContactos()
+        {
+            int cantContactos;
+
+            int idUsuario = MainPage.idUser;
+            var uri = new Uri("http://julioapp.somee.com/api/GrupoContacto?idUsuario=");
+
+            var httpClient = new HttpClient();
+
+            var response = await httpClient.GetAsync(uri + idUsuario.ToString());
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var gets = JsonConvert.DeserializeObject<List<ContactoModel>>(content);
+
+                GetCantContactos = new List<ContactoModel>(gets);
+
+                //cantContactos = GetCantContactos.Count;
+
+                if (ListaContactoPage.contCantContactos < GetCantContactos.Count)
+                {
+                    ListaContactoPage.contCantContactos = GetCantContactos.Count;
+                    ListaContactoPage.nuevoContacAgregado = true;
+                }
+                if (ListaContactoPage.contCantContactos > GetCantContactos.Count)
+                {
+                    ListaContactoPage.contCantContactos = GetCantContactos.Count;
+                    ListaContactoPage.nuevoContacAgregado = true;
+                }
+
 
             }
             else

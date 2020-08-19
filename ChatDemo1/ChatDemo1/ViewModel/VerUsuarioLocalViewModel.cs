@@ -66,6 +66,14 @@ namespace ChatDemo1.ViewModel
             {
                 ObservableCollection<UsuarioLocalModel> modelo = new ObservableCollection<UsuarioLocalModel>(contexto.Consultar());
                 ListadoUsuario = modelo;
+                if (modelo.Count > 0)
+                {
+                    MainPage.UserRegistrado = true;
+                }
+                else
+                {
+                    MainPage.UserRegistrado = false;
+                }
              
             }
 
@@ -88,6 +96,7 @@ namespace ChatDemo1.ViewModel
                 MainPage.Correo = modelo.Correo;
                 MainPage.FotoUsuario = modelo.FotoUsuario;
 
+                
 
             }
 

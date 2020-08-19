@@ -10,6 +10,10 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Ir a chatList" BackgroundColor="Green" x:Name="btnchatList" Clicked="btnchatList_Clicked"  WidthRequest="150"  ></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

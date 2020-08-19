@@ -30,25 +30,19 @@ namespace ChatDemo1.Views
         public RegistroInicioPage()
         {
             InitializeComponent();
-            this.BindingContext = new ConfgUsuarioLocalViewModel();
+            
+            if (MainPage.UserRegistrado)
+            {
+                Navigation.PushAsync(new MainPage());
+            }
+            else
+            {
+                this.BindingContext = new ConfgUsuarioLocalViewModel();
+            }
            
 
         }
 
-        public RegistroInicioPage(string PId,string PIdUsuario, string NombreUsuario, string ApellidoUsuario, string Correo, string NumCell, string FotoUsuario)
-        {
-            InitializeComponent();
-            this.BindingContext = new ConfgUsuarioLocalViewModel();
-            Idusuario = Convert.ToInt32(PIdUsuario);
-            txtId.Text = PId;
-            txtIdUsuario.Text = PIdUsuario;
-            txtNombre.Text = NombreUsuario;
-            txtApellido.Text = ApellidoUsuario;
-            txtCorreo.Text = Correo;
-            txtNumCell.Text = NumCell;
-            txtFotoUsuario.Text = FotoUsuario;
-
-        }
 
         private async void btnGuardar_Clicked(object sender, EventArgs e)
         {
@@ -125,38 +119,7 @@ namespace ChatDemo1.Views
 
         }
 
-        private void btnCancelar_Clicked(object sender, EventArgs e)
-        {
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtCorreo.Text = "";
-            txtNumCell.Text = "";
-            txtFotoUsuario.Text = "";
-
-            txtNombre.Placeholder = "Nombre";
-            txtApellido.Placeholder = "Apellido";
-            txtCorreo.Placeholder = "Correo";
-            txtNumCell.Placeholder = "Num. Cell";
-            txtFotoUsuario.Placeholder = "Imagen";
-
-
-        }
-
-        private async void btnMenu_Clicked(object sender, EventArgs e)
-        {
-            if (Idusuario.ToString() == null || Idusuario.ToString() == "")
-            {
-                Idusuario = 1;
-            }
-            await Navigation.PushAsync(new MainPage());
-        }
-
-        private void btnEliminar_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-
+        
         private List<UsuarioPerfilModel> _GetsList { get; set; }
         public List<UsuarioPerfilModel> GetsList
         {

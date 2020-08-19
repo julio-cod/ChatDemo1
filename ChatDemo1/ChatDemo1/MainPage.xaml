@@ -11,12 +11,10 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             Title="JApp Online">
        <!--     android:TabbedPage.ToolbarPlacement="Bottom"  -->
-            
-
 
     <views:EmptyPage Icon="home.png" />
-    <views:BuscContactoPage Icon="search.png"/>
     <views:ListaContactoPage Icon="chat.png" x:Name="tabListaContactos" />
+    <views:BuscContactoPage Icon="search.png"/>
     <views:VerUsuarioLocalPage Icon="settings.png"/>
 
     

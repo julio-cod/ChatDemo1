@@ -1,4 +1,5 @@
-﻿using ChatDemo1.Views;
+﻿using ChatDemo1.ViewModel;
+using ChatDemo1.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,11 +17,17 @@ namespace ChatDemo1
             //MainPage = new ListaUsuariosPage(); 
             //MainPage = new RegistroInicioPage();
             //MainPage = new NavigationPage(new RegistroInicioPage());
+            
             MainPage = new NavigationPage(new MainPage());
+
+
         }
 
         protected override void OnStart()
         {
+            
+
+
         }
 
         protected override void OnSleep()

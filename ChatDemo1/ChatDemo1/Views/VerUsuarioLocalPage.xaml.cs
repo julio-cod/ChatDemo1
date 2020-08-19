@@ -25,7 +25,7 @@ namespace ChatDemo1.Views
             if (e.CurrentSelection[0] is UsuarioLocalModel UsuarioLocalModel)
             {
 
-                await Navigation.PushAsync(new RegistroInicioPage(UsuarioLocalModel.Id.ToString(),UsuarioLocalModel.IdUsuario.ToString(), UsuarioLocalModel.NombreUsuario, UsuarioLocalModel.ApellidoUsuario, UsuarioLocalModel.Correo, UsuarioLocalModel.NumCell, UsuarioLocalModel.FotoUsuario));
+                await Navigation.PushAsync(new ConfigDatosPage(UsuarioLocalModel.Id.ToString(),UsuarioLocalModel.IdUsuario.ToString(), UsuarioLocalModel.NombreUsuario, UsuarioLocalModel.ApellidoUsuario, UsuarioLocalModel.Correo, UsuarioLocalModel.NumCell, UsuarioLocalModel.FotoUsuario));
                 BindingContext = new VerUsuarioLocalViewModel();
 
             }

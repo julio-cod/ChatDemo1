@@ -16,5 +16,10 @@ namespace ChatDemo1.Views
         {
             InitializeComponent();
         }
+
+        private async void btnchatList_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListaContactoPage());
+        }
     }
 }

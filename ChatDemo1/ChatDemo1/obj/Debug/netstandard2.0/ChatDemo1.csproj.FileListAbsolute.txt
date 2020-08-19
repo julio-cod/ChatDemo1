@@ -23,3 +23,4 @@ C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Vi
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\ChatDemo1.csproj.CoreCompileInputs.cache
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\ChatDemo1.csproj.Fody.CopyLocal.cache
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\ConfigDatosPage.xaml.g.cs

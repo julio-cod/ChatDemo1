@@ -6,9 +6,6 @@
              mc:Ignorable="d"
              x:Class="ChatDemo1.Views.ListaContactoPage">
     <StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Button Text="Actualizar" BackgroundColor="Green" x:Name="btnActualizar" Clicked="btnActualizar_Clicked"  WidthRequest="120"  ></Button>
-        </StackLayout>
         <StackLayout>
             <Grid>
                 <Grid.RowDefinitions>

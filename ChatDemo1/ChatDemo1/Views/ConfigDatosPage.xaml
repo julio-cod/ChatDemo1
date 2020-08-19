@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChatDemo1.Views.ConfigDatosPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Configuracion de datos" Font="25" TextColor="Blue" HorizontalOptions="Center"></Label>
+                    <Entry Placeholder="Id" x:Name="txtId" Text="{Binding Id}" ></Entry>
+                    <Entry Placeholder="IdUsuario" x:Name="txtIdUsuario" Text="{Binding IdUsuario}" ></Entry>
+                    <Entry Placeholder="Nombre" x:Name="txtNombre" Text="{Binding NombreUsuario}" ></Entry>
+                    <Entry Placeholder="Apellido" x:Name="txtApellido" Text="{Binding ApellidoUsuario}"></Entry>
+                    <Entry Placeholder="Correo" x:Name="txtCorreo" Text="{Binding Correo}"></Entry>
+                    <Entry Placeholder="Num. Cell" x:Name="txtNumCell" Keyboard="Numeric" Text="{Binding NumCell}"></Entry>
+                    <Entry Placeholder="Imagen" x:Name="txtFotoUsuario" Text="{Binding FotoUsuario}"></Entry>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Menu" BackgroundColor="Green" x:Name="btnMenu" Clicked="btnMenu_Clicked"  WidthRequest="120" ></Button>
+                </StackLayout>
+                <Button Text="Cancelar" BackgroundColor="OrangeRed" x:Name="btnCancelar" WidthRequest="120" Command="{Binding Nuevo}" ></Button>
+                
+                <Button Text="Eliminar" BackgroundColor="OrangeRed" x:Name="btnEliminar" WidthRequest="120" Command="{Binding Eliminar}" ></Button>
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

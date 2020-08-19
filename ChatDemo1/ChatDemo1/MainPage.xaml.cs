@@ -18,6 +18,8 @@ namespace ChatDemo1
     [DesignTimeVisible(false)]
     public partial class MainPage
     {
+        public static bool UserRegistrado = false;
+
         public static int idUser = -1;
         public static string NumCellContacto = "";
         public static string NombreUsuario = "";
@@ -28,47 +30,22 @@ namespace ChatDemo1
         public MainPage()
         {
             InitializeComponent();
-            
-            try
+            BindingContext = new VerUsuarioLocalViewModel();
+            if (UserRegistrado == true)
             {
-                BindingContext = new VerUsuarioLocalViewModel();
                 (this.BindingContext as VerUsuarioLocalViewModel).VerUsuarioLocalCommand.Execute(null);
-
-                if (idUser == -1 || idUser.ToString() == string.Empty || idUser.ToString() == null)
-                {
-                    Navigation.PushAsync(new RegistroInicioPage());
-                }
-
-                else
-                {
+                //DisplayAlert("Inicio de App", "Bienvenido " + idUser + " " + NombreUsuario + " " + ApellidoUsuario + " " + NumCellContacto + " " + Correo + " " + FotoUsuario, "Iniciar");
 
 
-                    DisplayAlert("Inicio de App", "Bienvenido " + idUser + " " + NombreUsuario + " " + ApellidoUsuario + " " + NumCellContacto + " " + Correo + " " + FotoUsuario, "Iniciar");
-
-                }
             }
-            catch (Exception)
+            else
             {
-
-                //throw;
-
-                if (idUser == -1 || idUser.ToString() == string.Empty || idUser.ToString() == null)
-                {
-                    Navigation.PushAsync(new RegistroInicioPage());
-                }
-
-                else
-                {
-
-
-                    DisplayAlert("Inicio de App", "Bienvenido " + idUser + " " + NombreUsuario + " " + ApellidoUsuario + " " + NumCellContacto + " " + Correo + " " + FotoUsuario, "Iniciar");
-
-                }
-
+                Navigation.PushAsync(new RegistroInicioPage());
             }
+
+
             
 
-           
 
 
         }
