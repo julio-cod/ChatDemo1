@@ -30,16 +30,9 @@ namespace ChatDemo1.Views
         public RegistroInicioPage()
         {
             InitializeComponent();
-            
-            if (MainPage.UserRegistrado)
-            {
-                Navigation.PushAsync(new MainPage());
-            }
-            else
-            {
-                this.BindingContext = new ConfgUsuarioLocalViewModel();
-            }
-           
+
+            this.BindingContext = new ConfgUsuarioLocalViewModel();
+
 
         }
 

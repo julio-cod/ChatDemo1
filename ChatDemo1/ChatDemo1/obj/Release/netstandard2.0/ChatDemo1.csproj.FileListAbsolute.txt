@@ -22,5 +22,5 @@ C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Release\netstandard2.0\
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Release\netstandard2.0\ChatDemo1.dll
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Release\netstandard2.0\ref\ChatDemo1.dll
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Release\netstandard2.0\ChatDemo1.pdb
-C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Release\netstandard2.0\ChatDemo1.csprojAssemblyReference.cache
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Release\netstandard2.0\Views\ConfigDatosPage.xaml.g.cs
+C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Release\netstandard2.0\ChatDemo1.csprojAssemblyReference.cache

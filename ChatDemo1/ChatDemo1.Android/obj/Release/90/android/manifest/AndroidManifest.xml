@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.chatdemo1" android:installLocation="auto">
-  <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="28" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" p2:versionCode="1" p2:versionName="1.0" package="com.companyname.chatdemo1" p2:installLocation="auto" android:versionCode="1" android:versionName="1.0" xmlns:p2="https://schemas.android.com/apk/res/android">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk p2:minSdkVersion="19" p2:targetSdkVersion="28" android:minSdkVersion="16" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:label="ChatDemo1.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon">
+  <uses-permission p2:name="android.permission.ACCESS_NETWORK_STATE" />
+  <application p2:label="jsystemAppChat" android:name="android.app.Application" android:allowBackup="true" android:label="com.companyname.chatdemo1" android:icon="@mipmap/icon">
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="ChatDemo1" android:theme="@style/MainTheme" android:name="crc64e4ba154fcc59d681.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
