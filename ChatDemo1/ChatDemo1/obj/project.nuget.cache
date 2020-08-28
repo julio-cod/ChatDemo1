@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QF3Wz9b0l1HWIcjPQ6Cdtn9+x/VRFpJ1/tr6FxA6k69BSW+6PgcnZ4kTEzb7ascuZt8g0/eBZeKLs+XVxVJhiQ==",
+  "dgSpecHash": "3s9DSMt5bPdCh4vKu/reyHYOiu/lFZopoanmqIj9lIiFshO/PBw2zjiA/AN67BikG+wURfwZsV4DZYqP01TrXA==",
   "success": true,
   "projectFilePath": "C:\\Proyectos App Movil\\ChatDemo1\\ChatDemo1\\ChatDemo1\\ChatDemo1.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,8 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
   ],
   "logs": []

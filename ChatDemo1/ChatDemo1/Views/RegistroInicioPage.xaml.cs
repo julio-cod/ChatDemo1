@@ -23,7 +23,7 @@ namespace ChatDemo1.Views
         public static string ApellidoUsuario = "";
         public static string Correo = "";
         public static string NumCell = "";
-        public static string FotoUsuario = "";
+        public static byte[] FotoUsuario;
         public static int Idusuario;
         public static int Id;
 
@@ -48,11 +48,12 @@ namespace ChatDemo1.Views
                 ApellidoUsuario = txtApellido.Text;
                 Correo = txtCorreo.Text;
                 NumCell = txtNumCell.Text;
-                FotoUsuario = txtFotoUsuario.Text;
+                txtFotoUsuario.Text = FotoUsuario.ToString();
+                //FotoUsuario = txtFotoUsuario.Text;
 
                 if (txtFotoUsuario.Text == "" || txtFotoUsuario.Placeholder == "Imagen")
                 {
-                    FotoUsuario = "http://julioapp.somee.com/imagenPerfil/imagenPerfil.jpg";
+                    //FotoUsuario = "http://julioapp.somee.com/imagenPerfil/imagenPerfil.jpg";
                 }
 
                 BindingContext = new UsuariosPerfilViewModel();
@@ -164,5 +165,20 @@ namespace ChatDemo1.Views
 
         }
 
+        private void btnEliminarPrueba_Clicked(object sender, EventArgs e)
+        {
+            BindingContext = new ConfgUsuarioLocalViewModel();
+
+            (this.BindingContext as ConfgUsuarioLocalViewModel).EliminarTablaComand.Execute(null);
+
+        }
+
+        private void btnSeleccionarFoto_Clicked(object sender, EventArgs e)
+        {
+            BindingContext = new CargarImagenViewModel();
+            (this.BindingContext as CargarImagenViewModel).PickPictureCommand.Execute(null);
+        }
+
+        
     }
 }

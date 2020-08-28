@@ -1,4 +1,3 @@
-C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\ChatDemo1.csprojAssemblyReference.cache
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\EmptyPage.xaml.g.cs
@@ -20,7 +19,7 @@ C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Vi
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\ListaContactoPage.xaml.g.cs
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\RegistroInicioPage.xaml.g.cs
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\VerUsuarioLocalPage.xaml.g.cs
+C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\ConfigDatosPage.xaml.g.cs
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\ChatDemo1.csproj.CoreCompileInputs.cache
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\ChatDemo1.csproj.Fody.CopyLocal.cache
 C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Proyectos App Movil\ChatDemo1\ChatDemo1\ChatDemo1\obj\Debug\netstandard2.0\Views\ConfigDatosPage.xaml.g.cs

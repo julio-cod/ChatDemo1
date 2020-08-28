@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,7 +21,7 @@ namespace ChatDemo1.Views
         public static string NombreUsuario = "";
         public static string ApellidoUsuario = "";
         public static string Correo = "";
-        public static string FotoUsuario = "";
+        public static byte[] FotoUsuario;
 
         public BuscContactoPage()
         {

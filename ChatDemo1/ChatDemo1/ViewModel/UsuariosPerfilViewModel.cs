@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -17,9 +18,11 @@ namespace ChatDemo1.ViewModel
 {
     public class UsuariosPerfilViewModel : INotifyPropertyChanged
     {
+        
 
         public ICommand RegistroIncioCommand { get; set; }
 
+       
 
         private List<UsuarioPerfilModel> _GetsList { get; set; }
         public List<UsuarioPerfilModel> GetsList
@@ -205,6 +208,9 @@ namespace ChatDemo1.ViewModel
 
 
         }
+
+        
+
 
     }
 }

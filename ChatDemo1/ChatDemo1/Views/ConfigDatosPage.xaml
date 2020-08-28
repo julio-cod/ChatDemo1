@@ -17,6 +17,13 @@
                     <Entry Placeholder="Correo" x:Name="txtCorreo" Text="{Binding Correo}"></Entry>
                     <Entry Placeholder="Num. Cell" x:Name="txtNumCell" Keyboard="Numeric" Text="{Binding NumCell}"></Entry>
                     <Entry Placeholder="Imagen" x:Name="txtFotoUsuario" Text="{Binding FotoUsuario}"></Entry>
+                    <Image
+                                x:Name="imgImagenPerfil"
+                                Grid.RowSpan="3"
+                                Aspect="AspectFit"
+                                HeightRequest="70"
+                                WidthRequest="70" />
+                    
 
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">

@@ -69,14 +69,14 @@ namespace ChatDemo1.ViewModel
                 ApellidoUsuario = string.Empty;
                 Correo = string.Empty;
                 NumCell = string.Empty;
-                FotoUsuario = string.Empty;
+                //FotoUsuario = string.Empty;
 
             }
           );
 
 
             Guardar = new Command(() => {
-                FotoUsuario = string.Empty;
+                //FotoUsuario = string.Empty;
                 UsuarioLocalModel modelo = new UsuarioLocalModel()
                 {
                     IdUsuario = RegistroInicioPage.Idusuario,
@@ -92,12 +92,12 @@ namespace ChatDemo1.ViewModel
                 
 
                 using (var contexto = new DataContext())
-                {
+                {/*
                     if (modelo.FotoUsuario == string.Empty)
                     {
                         modelo.FotoUsuario = "http://julioapp.somee.com/imagenPerfil/imagenPerfil.jpg";
                     }
-
+                    */
                     contexto.Insertar(modelo);
                 }  
             }
@@ -158,12 +158,12 @@ namespace ChatDemo1.ViewModel
                 };
 
                 using (var contexto = new DataContext())
-                {
+                {/*
                     if (modelo.FotoUsuario == string.Empty || modelo.FotoUsuario == "" || modelo.FotoUsuario == null)
                     {
                         modelo.FotoUsuario = "http://julioapp.somee.com/imagenPerfil/imagenPerfil.jpg";
                     }
-
+                    */
                     contexto.Actualizar(modelo);
                 }
             }

@@ -1,6 +1,7 @@
 ﻿using ChatDemo1.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace ChatDemo1.Views
             this.BindingContext = new ConfgUsuarioLocalViewModel();
         }
 
-        public ConfigDatosPage(string PId, string PIdUsuario, string NombreUsuario, string ApellidoUsuario, string Correo, string NumCell, string FotoUsuario)
+        public ConfigDatosPage(string PId, string PIdUsuario, string NombreUsuario, string ApellidoUsuario, string Correo, string NumCell, byte[] FotoUsuario)
         {
             InitializeComponent();
             this.BindingContext = new ConfgUsuarioLocalViewModel();
@@ -38,7 +39,9 @@ namespace ChatDemo1.Views
             txtApellido.Text = ApellidoUsuario;
             txtCorreo.Text = Correo;
             txtNumCell.Text = NumCell;
-            txtFotoUsuario.Text = FotoUsuario;
+            txtFotoUsuario.Text = FotoUsuario.ToString();
+
+            imgImagenPerfil.Source = ImageSource.FromStream(() => new MemoryStream(FotoUsuario));
 
         }
 

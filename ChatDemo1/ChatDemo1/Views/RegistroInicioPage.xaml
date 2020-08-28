@@ -18,12 +18,14 @@
                     <Entry Placeholder="Correo" x:Name="txtCorreo" Text="{Binding Correo}"></Entry>
                     <Entry Placeholder="Num. Cell" x:Name="txtNumCell" Keyboard="Numeric" Text="{Binding NumCell}"></Entry>
                     <Entry Placeholder="Imagen" x:Name="txtFotoUsuario" Text="{Binding FotoUsuario}"></Entry>
-
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button Text="Seleccionar foto" BackgroundColor="BlueViolet" x:Name="btnSeleccionarFoto" Clicked="btnSeleccionarFoto_Clicked"  WidthRequest="160"  ></Button>
                     </StackLayout>
+                     </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Button Text="Registarse" BackgroundColor="Green" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"  WidthRequest="160"  ></Button>
                 </StackLayout>
-                
+                <Button Text="Eliminacion Prueba" BackgroundColor="Green" x:Name="btnEliminarPrueba" Clicked="btnEliminarPrueba_Clicked"  WidthRequest="160"  ></Button>
 
 
                 

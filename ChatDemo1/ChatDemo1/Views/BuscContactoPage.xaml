@@ -4,7 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ChatDemo1.Views.BuscContactoPage">
+             x:Class="ChatDemo1.Views.BuscContactoPage"
+             xmlns:conv="ChatDemo1.Helpers.ByteToImageFieldConverter">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:ByteToImageFieldConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -62,7 +69,8 @@
                             <Image
                                 Grid.RowSpan="3"
                                 HeightRequest="70"
-                                Source="{Binding FotoUsuario}"
+                                Aspect="AspectFit"
+                                Source="{Binding FotoUsuario, Converter={StaticResource ByteArrayToImage}}"
                                 WidthRequest="70" />
                         </Frame>
 

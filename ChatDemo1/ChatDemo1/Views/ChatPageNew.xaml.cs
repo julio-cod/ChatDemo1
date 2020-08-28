@@ -16,7 +16,7 @@ namespace ChatDemo1.Views
 
         public static int IdReceptor = 0;
         
-        public ChatPageNew(string IdUsuarioReceptor, string NombreUsuario, string ApellidoUsuario, string Correo, string NumCell, string FotoUsuario)
+        public ChatPageNew(string IdUsuarioReceptor, string NombreUsuario, string ApellidoUsuario, string Correo, string NumCell, byte[] FotoUsuario)
         {
             InitializeComponent();
             

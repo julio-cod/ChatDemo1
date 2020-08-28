@@ -25,7 +25,7 @@ namespace ChatDemo1
         public static string NombreUsuario = "";
         public static string ApellidoUsuario = "";
         public static string Correo = "";
-        public static string FotoUsuario = "http://julioapp.somee.com/imagenPerfil/jazz1img.jpg";
+        public static byte[] FotoUsuario;
 
         public MainPage()
         {
